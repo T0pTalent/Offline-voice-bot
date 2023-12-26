@@ -42,10 +42,11 @@ class Chatbot:
         
         bot_response = self.get_response()
         self.history.append(bot_response)
+        return bot_response['content']
 
 
 bot = Chatbot()
 while True:
     user_input = input('User: ')
-    bot.chat(user_input)
+    bot_output = bot.chat(user_input)
     print()
